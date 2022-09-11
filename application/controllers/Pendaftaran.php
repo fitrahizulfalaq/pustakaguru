@@ -73,9 +73,23 @@ class Pendaftaran extends CI_Controller
 			$this->pendaftaran_m->simpan($post);
 
 			if ($this->db->affected_rows() > 0) {
-				$this->session->set_flashdata('success', 'Pendaftaran Berhasil, lengkapi profil setelah login menggunakan email yang telah anda daftarkan');
+				$this->session->set_flashdata('success', 'Pendaftaran Berhasil, Sekarang anda bisa login menggunakan email dan password 4 angka belakang nomor anda');
 			}
-			redirect('pendaftaran/tambah');
+
+			//Setelah mendaftar langsung login ke Platform
+			$data = $this->pendaftaran_m->getByEmail($post['email'])->row();
+			$params = array(
+				'id' => $data->id,
+				'username' => $data->username,
+				'nama' => $data->nama,
+				'email' => $data->email,
+				'tempat_lahir' => $data->tempat_lahir,
+				'tanggal_lahir' => $data->tanggal_lahir,
+				'tipe_user' => $data->tipe_user,
+				'date_now' => date('Y:m:d H:i:s'),
+			);
+			$this->session->set_userdata($params);
+			redirect('dashboard');
 		}
 	}
 

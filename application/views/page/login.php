@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#000000">
-    <title>EDSCIENCE | BIKINKARYA CREATIVE MEDIA</title>
+    <title>PUSTAKA GURU INDONESIA | BIKINKARYA CREATIVE MEDIA</title>
     <meta name="description" content="Bikinkarya Creative Media">
     <meta name="keywords" content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
     <link rel="icon" type="image/png" href="<?=base_url()?>/assets/img/favicon.png" sizes="32x32">
@@ -37,7 +37,7 @@
 
         <div class="section mt-2 text-center">
             <h1>Log in</h1>
-            <h4>Masukkan Email dan Password anda</h4>
+            <h4>Masukkan Email dan Password anda</h4>            
         </div>
         <div class="section mb-5 p-2">
 		<?php $this->view('message'); ?>
@@ -47,7 +47,7 @@
                         <div class="form-group basic">
                             <div class="input-wrapper">
                                 <label class="label" for="email">E-mail</label>
-                                <input type="email" name="username" class="form-control" id="email" placeholder="Your e-mail">
+                                <input type="email" name="username" class="form-control" id="email" placeholder="Ex: fitrah@bikinkarya.com">
                                 <i class="clear-input">
                                     <ion-icon name="close-circle"></ion-icon>
                                 </i>
@@ -58,12 +58,13 @@
                             <div class="input-wrapper">
                                 <label class="label" for="password1">Password</label>
                                 <input type="password" name="password" class="form-control" id="password1" autocomplete="off"
-                                    placeholder="Your password">
+                                    placeholder="Ex: 0340">
                                 <i class="clear-input">
                                     <ion-icon name="close-circle"></ion-icon>
                                 </i>
                             </div>
                         </div>
+                        <small>Password default menggunakan 4 digit terakhir nomor HP anda. Rubah setelah login.</small>
                     </div>
                 </div>
 

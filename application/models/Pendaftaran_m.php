@@ -14,6 +14,16 @@ class Pendaftaran_m extends CI_Model
 		return $query;
 	}
 
+	public function getByEmail($email = null)
+	{
+		$this->db->from('tb_user');
+		if ($email != null) {
+			$this->db->where('email', $email);
+		}
+		$query = $this->db->get();
+		return $query;
+	}
+
 	public function getNonActive($id = null)
 	{
 		$this->db->from('tb_user');
@@ -25,21 +35,21 @@ class Pendaftaran_m extends CI_Model
 	function simpan($post)
 	{
 		$params['id'] =  "";
-		$params['username'] =  $post['username'];
-		$params['password'] =  sha1($post['password']);
+		$params['username'] =  strtolower(substr($post['nama'],0,4)).substr($post['hp'],-4).date('y');
+		$params['password'] =  substr($post['hp'],-4);
 		$params['nama'] =  $post['nama'];
 		$params['tempat_lahir'] =  ucwords(strtolower($post['tempat_lahir']));
 		$params['tgl_lahir'] =  $post['tgl_lahir'];
 		$params['hp'] =  $post['hp'];
 		$params['email'] =  $post['email'];
 		$params['created'] =  date("Y:m:d:h:i:sa");
-		$params['tipe_user'] =  $post['tipe_user'];
-		if ($params['tipe_user'] == "1") {
-			$params['status'] =  "1";
-		} else {
-			$params['status'] =  "2";
-		}
+		$params['tipe_user'] =  "1";
+		$params['status'] =  "1";
+		$params['ip_address'] =  $this->input->ip_address();
+		$params['referal'] =  $post['referal'];
 		$this->db->insert('tb_user', $params);
+
+
 	}
 
 	function hapus($id)

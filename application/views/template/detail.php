@@ -52,13 +52,13 @@
                 <strong>Home</strong>
             </div>
         </a>
-        <a href="<?= base_url("subtema/pencarian")?>" class="item <?=$this->uri->segment(2) == 'pencarian' ? "active" : ""?>">
+        <a href="#" class="item <?=$this->uri->segment(2) == 'pencarian' ? "active" : ""?>" onclick="alert(`dalam tahap pengembangan`)">
             <div class="col">
                 <ion-icon name="search-outline"></ion-icon>
                 <strong>Search</strong>
             </div>
         </a>
-        <a href="<?= base_url("pertanyaan")?>" class="item <?=$this->uri->segment(1) == 'pertanyaan' ? "active" : ""?>">
+        <a href="#" class="item <?=$this->uri->segment(1) == 'pertanyaan' ? "active" : ""?>" onclick="alert(`dalam tahap pengembangan`)">
             <div class="col">
 				<ion-icon name="chatbubble-ellipses-outline"></ion-icon>
                 <strong>Chat</strong>

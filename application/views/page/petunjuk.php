@@ -6,19 +6,19 @@
 			<img src="<?= base_url() ?>/assets/img/sample/photo/3.jpg" alt="image" class="imaged img-fluid">
 		</figure> -->
 		<h1>
-			Tata Cara Penggunaan Aplikasi EDSCIENCE
+			Tata Cara Penggunaan Platform Pustaka Guru Indonesia
 		</h1>
 
 		<div class="lead">
-			Simak langkah berikut untuk menggunakan aplikasi.
+			Saat ini, platform ini dalam tahap pengembangan (Uji Coba). Anda hanya bisa mendapatkan informasi pelatihan terbaru dari PT Pustaka Guru Indonesia.
 		</div>
 	</div>
 
 	<div class="section mt-2">
 		<p>
 		<ol>
-			<li>Masukkan user name terlebih dahulu, kemudian klik log in.</li>
-			<li>Jelajahi materi sesuai dengan fitur</li>
+			<li>Masukkan email terlebih dahulu, kemudian klik log in.</li>
+			<li>Jelajahi fitur sesuai dengan kebutuhan anda</li>
 		</ol>
 		</p>
 	</div>
