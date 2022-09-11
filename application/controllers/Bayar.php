@@ -5,6 +5,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Bayar extends CI_Controller
 {
+    public function __construct(){
+		parent::__construct();
+		check_not_login();
+	}
 
     public function index()
     {
@@ -20,10 +24,10 @@ class Bayar extends CI_Controller
         $body['product']    = ['Tiket Tiktok'];
         $body['qty']        = ['1'];
         $body['price']      = ['10000'];
-        $body['returnUrl']  = base_url("bayar/berhasil/");
-        $body['cancelUrl']  = base_url("profil");
-        $body['notifyUrl']  = base_url("dashboard");
-        $body['referenceId'] = $this->session->username." | ".date("d-m-y"); //your reference id
+        $body['returnUrl']  = "https://member.pustakaguru.id/bayar/berhasil/";
+        $body['cancelUrl']  = "https://member.pustakaguru.id/profil";
+        $body['notifyUrl']  = "https://member.pustakaguru.id/dashboard";
+        $body['referenceId'] = date("Ymdhms"); //your reference id
         //End Request Body//
 
         //Generate Signature

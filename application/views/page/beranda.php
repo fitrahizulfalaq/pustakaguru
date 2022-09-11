@@ -41,7 +41,7 @@
 										<hr>
 										<div class="row">
 											<div class="col">
-												<a href="<?=base_url("bayar")?>" class="btn btn-block btn-primary">
+												<a href="https://project.bikinkarya.com/bayar/" class="btn btn-block btn-primary">
 													BELI TIKET
 												</a>
 											</div>
