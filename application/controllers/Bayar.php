@@ -133,7 +133,7 @@ class Bayar extends CI_Controller
 
 	public function konfirmasiOnline()
 	{
-		$data['menu'] = "Petunjuk Pembayaran Manual";
+		$data['menu'] = "Petunjuk Pembayaran Otomatis";
 		$this->templateadmin->load('template/tanpa-buttom','page/bayar/konfirmasiOnline',$data);
 	}
 }
