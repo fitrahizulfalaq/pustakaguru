@@ -2,11 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="Pustakaguru.id - Inovator Pendidikan Indonesia" content="yes" />
+    <meta name="Pustakaguru.id - Inovator Pendidikan Indonesia" content="black-translucent">
     <meta name="theme-color" content="#000000">
+    <title>Pustakaguru - <?= $menu?></title>
+    <meta name="description" content="Pustakguru.id">
+    <meta name="keywords"
+        content="pelatihan, guru, pelatihan guru indonesia, pppkguru" />
     <title>Edscience - <?= $menu ?></title>
     <meta name="description" content="Finapp HTML Mobile Template">
     <meta name="keywords" content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />

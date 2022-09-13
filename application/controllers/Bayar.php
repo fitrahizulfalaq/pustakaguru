@@ -12,21 +12,37 @@ class Bayar extends CI_Controller
 
     public function index()
     {
-        $va           = '1179001231390340'; //get on iPaymu dashboard
-        $secret       = '3A523EFD-6476-44B6-AE38-0AA82F94CEEA'; //get on iPaymu dashboard
+        //Real
+		// $va           = '1179001231390340'; //get on iPaymu dashboard
+        // $secret       = '3A523EFD-6476-44B6-AE38-0AA82F94CEEA'; //get on iPaymu dashboard
 
-        // $url          = 'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
-        $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
+		//sandbox
+		$va = '0000001231390340';
+		$secret = 'SANDBOXB291D70F-A174-4054-AB38-E7637E83AD0D';
+
+        $url          = 'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
+        // $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
 
         $method       = 'POST'; //method
+
+		//Get data from request
+		$user_id = $this->input->get("userid");
+		$username = $this->input->get("username"); 
+		$buyerPhone = $this->input->get("hp"); 
+		$email = $this->input->get("email");
 
         //Request Body//
         $body['product']    = ['Tiket Tiktok'];
         $body['qty']        = ['1'];
         $body['price']      = ['10000'];
-        $body['returnUrl']  = "https://member.pustakaguru.id/bayar/berhasil/";
-        $body['cancelUrl']  = "https://member.pustakaguru.id/profil";
-        $body['notifyUrl']  = "https://member.pustakaguru.id/dashboard";
+        $body['buyerName']      = $username;
+        $body['buyerPhone']      = $buyerPhone;
+        $body['buyerEmail']      = $email;
+        $body['expired']      = '15';
+        $body['expiredType']      = 'minutes';
+        $body['returnUrl']  = "http://localhost/pustakaguru/bayar/berhasil";
+        $body['cancelUrl']  = "http://localhost/pustakaguru/profil";
+        $body['notifyUrl']  = "http://localhost/pustakaguru/proses?eventid=1&userid=".$user_id."&username=".$username."&email=".$email;
         $body['referenceId'] = date("Ymdhms"); //your reference id
         //End Request Body//
 
@@ -81,9 +97,37 @@ class Bayar extends CI_Controller
         }
     }
 
-    public function berhasil()
+    public function proses()
     {
-		$data['menu'] = "Menu Utama";
-		$this->templateadmin->load('template/dashboard','page/berhasil',$data);
+		// Masukkan pembayaran
+		$params['event_id'] = $this->input->get("eventid"); 
+		$params['user_id'] = $this->input->get("userid"); 
+		$params['username'] = $this->input->get("username"); 
+		$params['email'] = $this->input->get("email"); 
+		$params['invoice'] = $this->input->get("username").date("ymd");
+		$params['created'] = date("Y:m:d:h:i:sa");
+		
+		if ($params['user_id'] != null & $params['email'] != null & $params['event_id'] != null & $params['username'] != null ) {
+			$this->load->model("bayar_m");
+			$this->bayar_m->simpan($params);
+
+			redirect('bayar/berhasil');
+		} else {
+			$this->session->set_flashdata('warning', 'Harap Lakukan pembayaran terlebih dahulu');
+			redirect('dashboard');
+		}
+
     }
+
+	public function berhasil()
+    {
+		$data['menu'] = "Pembayaran Berhasil";
+		$this->templateadmin->load('template/tanpa-buttom','page/bayar/berhasil',$data);
+    }
+
+	public function manual()
+	{
+		$data['menu'] = "Petunjuk Pembayaran Manual";
+		$this->templateadmin->load('template/tanpa-buttom','page/bayar/manual',$data);
+	}
 }

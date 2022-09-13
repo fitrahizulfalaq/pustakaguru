@@ -83,6 +83,7 @@ class Pendaftaran extends CI_Controller
 				'username' => $data->username,
 				'nama' => $data->nama,
 				'email' => $data->email,
+				'hp' => $data->hp,
 				'tempat_lahir' => $data->tempat_lahir,
 				'tanggal_lahir' => $data->tanggal_lahir,
 				'tipe_user' => $data->tipe_user,
