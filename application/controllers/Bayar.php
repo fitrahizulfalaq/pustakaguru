@@ -8,11 +8,17 @@ class Bayar extends CI_Controller
     public function __construct(){
 		parent::__construct();
 		check_not_login();
+		$this->load->model("bayar_m");
 	}
 
     public function index()
     {
-        //Real
+        $transaksi_terakhir = $this->bayar_m->cek($this->session->id);
+		if ($transaksi_terakhir->num_rows() != null ) {
+			redirect($transaksi_terakhir->row("url"));
+		}
+		
+		//Real
 		// $va           = '1179001231390340'; //get on iPaymu dashboard
         // $secret       = '3A523EFD-6476-44B6-AE38-0AA82F94CEEA'; //get on iPaymu dashboard
 
@@ -30,6 +36,7 @@ class Bayar extends CI_Controller
 		$username = $this->input->get("username"); 
 		$buyerPhone = $this->input->get("hp"); 
 		$email = $this->input->get("email");
+		$status = $this->input->get("status");
 
         //Request Body//
         $body['product']    = ['Tiket Tiktok'];
@@ -38,11 +45,11 @@ class Bayar extends CI_Controller
         $body['buyerName']      = $username;
         $body['buyerPhone']      = $buyerPhone;
         $body['buyerEmail']      = $email;
-        $body['expired']      = '15';
-        $body['expiredType']      = 'minutes';
-        $body['returnUrl']  = "http://localhost/pustakaguru/bayar/berhasil";
-        $body['cancelUrl']  = "http://localhost/pustakaguru/profil";
-        $body['notifyUrl']  = "http://localhost/pustakaguru/proses?eventid=1&userid=".$user_id."&username=".$username."&email=".$email;
+        $body['expired']      = '20';
+        $body['expiredType']      = 'hours';
+        $body['returnUrl']  = "https://member.pustakaguru.id/bayar/proses?eventid=1&userid=".$user_id."&username=".$username."&email=".$email."&responses=".$status;
+        $body['cancelUrl']  = "https://member.pustakaguru.id/dashboard";
+        $body['notifyUrl']  = "https://member.pustakaguru.id/bayar/proses?eventid=1&userid=".$user_id."&username=".$username."&email=".$email."&responses=".$status;
         $body['referenceId'] = date("Ymdhms"); //your reference id
         //End Request Body//
 
@@ -82,10 +89,10 @@ class Bayar extends CI_Controller
         if ($err) {
             echo $err;
         } else {
-
-            //Response
+			//Response
             $ret = json_decode($ret);
-            if ($ret->Status == 200) {
+            if ($ret->Status == 200) {				
+				$this->bayar_m->proses($ret->Data->Url);			
                 $sessionId  = $ret->Data->SessionID;
                 $url        =  $ret->Data->Url;
                 header('Location:' . $url);
