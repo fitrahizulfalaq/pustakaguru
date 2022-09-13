@@ -24,7 +24,7 @@
 			<div class="splide__track" id="splide01-track">
 				<ul class="splide__list" id="splide01-list" style="transform: translateX(-2433px);">
 					<li class="splide__slide splide__slide--clone" aria-hidden="true" tabindex="-1" style="width: 811px;">
-						<a href="https://project.bikinkarya.com/bayar?<?="username=".$this->session->username."&email=".$this->session->email."&userid=".$this->session->id."&hp=".$this->session->hp?>">
+						<a href="#">
 							<div class="blog-card">
 								<!-- <img src="assets/img/sample/photo/3.jpg" alt="image" class="imaged w-100"> -->
 								<div class="card card-with-icon">
@@ -40,10 +40,10 @@
 											Spesial Launching Pustakguru.id
 										</p>
 										<hr>
+										<?php if ($this->fungsi->hitung_rows("tb_pembelian","email",$this->session->email) == null) {?>
 										<div class="row">
 											<div class="col-6">
-												<!-- <a href="https://project.bikinkarya.com/bayar/" class="btn btn-block btn-primary"> -->
-												<a href="https://project.bikinkarya.com/bayar?<?="username=".$this->session->username."&email=".$this->session->email."&userid=".$this->session->id."&hp=".$this->session->hp?>" class="btn btn-block btn-primary">
+												<a href="<?=base_url("bayar/konfirmasiOnline")?>" class="btn btn-block btn-primary">
 													BELI TIKET (OTOMATIS AKTIF)
 												</a>
 											</div>
@@ -53,6 +53,15 @@
 												</a>
 											</div>
 										</div>
+										<?php } else { ?>
+											<div class="row">
+											<div class="col-6">
+												<a href="#" class="btn btn-block btn-primary">
+													JOIN MEETING
+												</a>
+											</div>											
+										</div>
+										<?php } ?>
 									</div>
 								</div>
 							</div>
