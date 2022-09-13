@@ -55,10 +55,16 @@
 										</div>
 										<?php } else { ?>
 											<div class="row">
-											<div class="col-6">
+												<div class="col-6">
 												<a href="#" class="btn btn-block btn-primary">
 													ANDA BERHASIL MENDAPATKAN TIKET
 												</a>
+												</div>
+												<div class="col-6">
+												<a href="#" class="btn btn-block btn-success">
+													LINK ZOOM H-1 ACARA
+												</a>
+												</div>
 											</div>											
 										</div>
 										<?php } ?>
