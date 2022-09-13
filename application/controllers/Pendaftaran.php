@@ -50,6 +50,7 @@ class Pendaftaran extends CI_Controller
 	// FORM EKSEKUSI
 	public function tambah()
 	{
+		check_already_login();
 		//Load librarynya dulu
 		$this->load->library('form_validation');
 		//Atur validasinya

@@ -57,7 +57,7 @@
 											<div class="row">
 											<div class="col-6">
 												<a href="#" class="btn btn-block btn-primary">
-													JOIN MEETING
+													ANDA BERHASIL MENDAPATKAN TIKET
 												</a>
 											</div>											
 										</div>

@@ -106,8 +106,9 @@ class Bayar extends CI_Controller
 		$params['email'] = $this->input->get("email"); 
 		$params['invoice'] = $this->input->get("username").date("ymd");
 		$params['created'] = date("Y:m:d:h:i:sa");
+		$status = $this->input->get("status"); 
 		
-		if ($params['user_id'] != null & $params['email'] != null & $params['event_id'] != null & $params['username'] != null ) {
+		if ($params['user_id'] != null & $params['email'] != null & $params['event_id'] != null & $params['username'] != null & $status="berhasil") {
 			$this->load->model("bayar_m");
 			$this->bayar_m->simpan($params);
 
