@@ -43,8 +43,8 @@
 										<?php if ($this->fungsi->hitung_rows("tb_pembelian","email",$this->session->email) == null) {?>
 										<div class="row">
 											<div class="col-6">
-												<a href="<?=base_url("bayar/konfirmasiOnline")?>" class="btn btn-block btn-primary">
-													BELI TIKET (OTOMATIS AKTIF)
+												<a href="<?=base_url("bayar/konfirmasiOnline")?>" class="btn btn-block btn-success">
+													BELI TIKET (OTOMATIS)
 												</a>
 											</div>
 											<div class="col-6">
