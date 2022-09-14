@@ -9,7 +9,7 @@
 				Sistem pembayaran ini akan secara otomatis mengaktifkan layanan yang akan bapak/ibu beli. Sebelum melakukan pembayaran pastikan beberapa hal berikut : <br><br>
 
 				1. Pastikan Mengingat Akun Login (Terdiri dari : Email dan 4 digit terakhir nomor HP)<br>
-				2. Batas waktu pembayaran berlansung selama <b>15 menit</b>.<br>
+				2. Batas waktu pembayaran berlansung selama <b>50 menit</b>.<br>
 				3. Pembayaran dapat dilakukan melaui <b><u>Virtual Account (VA) Bank BCA, BNI, BRI, Mandiri, BSI Syariah, dan Bank Muamalat</b></u><br>
 				4. Pembayaran E-Wallet bisa melaui QRIS melalui <b><u>Scan Aplikasi DANA, LinkAja, OVO, ShopeePay, Jenius, GoPay, dan Mobile Banking QRIS (BNI, BCA, BRI, dll yang mendukung fitur QRIS)</b></u><br>
 				5. <b>TIDAK ADA BIAYA ADMIN.</b><br>
@@ -28,7 +28,8 @@
 				<a onclick="window.history.go(-1)" class="btn btn-lg btn-outline-secondary btn-block">Kembali</a>
 			</div>
 			<div class="col-6">
-				<a href="https://project.bikinkarya.com/bayar?<?= "username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp ?>" class="btn btn-lg btn-primary btn-block">LANJUT BAYAR</a>
+				<!-- <a href="https://project.bikinkarya.com/bayar?<?= "username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp ?>" class="btn btn-lg btn-primary btn-block">LANJUT BAYAR</a> -->
+				<a href="<?= base_url("bayar?")."username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp ?>" class="btn btn-lg btn-primary btn-block">LANJUT BAYAR</a>
 			</div>
 		</div>
 	</div>

@@ -45,11 +45,11 @@ class Bayar extends CI_Controller
         $body['buyerName']      = $username;
         $body['buyerPhone']      = $buyerPhone;
         $body['buyerEmail']      = $email;
-        $body['expired']      = '20';
+        $body['expired']      = '1';
         $body['expiredType']      = 'hours';
-        $body['returnUrl']  = "https://member.pustakaguru.id/bayar/proses?eventid=1&userid=".$user_id."&username=".$username."&email=".$email."&responses=".$status;
-        $body['cancelUrl']  = "https://member.pustakaguru.id/dashboard";
-        $body['notifyUrl']  = "https://member.pustakaguru.id/bayar/proses?eventid=1&userid=".$user_id."&username=".$username."&email=".$email."&responses=".$status;
+        $body['returnUrl']  = base_url()."/bayar/proses?eventid=1&userid=".$user_id."&username=".$username."&email=".$email."&responses=".$status;
+        $body['cancelUrl']  = base_url()."/dashboard";
+        $body['notifyUrl']  = base_url()."/bayar/proses?eventid=1&userid=".$user_id."&username=".$username."&email=".$email."&responses=".$status;
         $body['referenceId'] = date("Ymdhms"); //your reference id
         //End Request Body//
 
@@ -115,10 +115,11 @@ class Bayar extends CI_Controller
 		$params['created'] = date("Y:m:d:h:i:sa");
 		$status = $this->input->get("status"); 
 		
-		if ($params['user_id'] != null & $params['email'] != null & $params['event_id'] != null & $params['username'] != null & $status == "berhasil") {
-			$this->load->model("bayar_m");
-			$this->bayar_m->simpan($params);
-
+		if ($params['user_id'] != null & $params['email'] != null & $params['event_id'] != null & $params['username'] != null & $status == "berhasil" or $status == "successful") {
+			//cek Apakah sudah ada sebelumnya atau tidak
+			if ($this->fungsi->pilihan("tb_pembelian","user_id",$params['user_id'])->num_rows() != null) {
+				$this->bayar_m->simpan($params);
+			}
 			redirect('bayar/berhasil');
 		} else {
 			$this->session->set_flashdata('warning', 'Harap Lakukan pembayaran terlebih dahulu');

@@ -40,29 +40,46 @@
 											Spesial Launching Pustakguru.id
 										</p>
 										<hr>
-										<?php if ($this->fungsi->hitung_rows("tb_pembelian","email",$this->session->email) == null) {?>
+										<?php if ($this->fungsi->hitung_rows_multiple("tb_riwayat_transaksi","user_id",$this->session->id,"created",date("Y-m-d h")) != null && $this->fungsi->hitung_rows("tb_pembelian","user_id",$this->session->id) == null) {?>
 										<div class="row">
-											<div class="col-6">
-												<a href="<?=base_url("bayar/konfirmasiOnline")?>" class="btn btn-block btn-success">
-													BELI TIKET (OTOMATIS)
+											<div class="row">
+												<div class="col-6">
+												<a href="<?= base_url("bayar?")."username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp ?>" class="btn btn-block btn-primary">
+													LANJUTKAN PEMBAYARAN
 												</a>
-											</div>
-											<div class="col-6">
-												<a href="<?= base_url("bayar/manual")?>" class="btn btn-secondary btn-outline">
-													BELI TIKET (MANUAL)
+												</div>
+												<div class="col-6">
+												<a href="https://wa.me/+6281231390340" class="btn btn-block btn-success">
+													BUTUH BANTUAN
 												</a>
+												</div>
+											</div>											
+										</div>
+										<?php } else if ($this->fungsi->hitung_rows("tb_pembelian","email",$this->session->email) == null) { ?>
+										<div class="row">
+											<div class="row">
+												<div class="col-6">
+													<a href="<?=base_url("bayar/konfirmasiOnline")?>" class="btn btn-block btn-success">
+														BELI TIKET (OTOMATIS)
+													</a>
+												</div>
+												<div class="col-6">
+													<a href="<?= base_url("bayar/manual")?>" class="btn btn-secondary btn-outline">
+														BELI TIKET (MANUAL)
+													</a>
+												</div>
 											</div>
 										</div>
 										<?php } else { ?>
 											<div class="row">
 												<div class="col-6">
 												<a href="#" class="btn btn-block btn-primary">
-													ANDA BERHASIL MENDAPATKAN TIKET
+													ANDA MEMILIKI TIKET
 												</a>
 												</div>
 												<div class="col-6">
 												<a href="#" class="btn btn-block btn-success">
-													LINK ZOOM H-1 ACARA
+													JOIN ZOOM (HARI-H ACARA)
 												</a>
 												</div>
 											</div>											
