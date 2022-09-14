@@ -13,7 +13,7 @@
     <meta name="keywords"
         content="pelatihan, guru, pelatihan guru indonesia, pppkguru" />
     <link rel="icon" type="image/png" href="<?=base_url()?>/assets/img/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?=base_url()?>/assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?=base_url()?>/assets/img/foto/pelatihantiktok.jpg">
     <link rel="stylesheet" href="<?=base_url()?>/assets/css/style.css">
     <link rel="manifest" href="<?=base_url()?>/__manifest.json">
 </head>

@@ -7,13 +7,13 @@
     <meta name="Pustakaguru.id - Inovator Pendidikan Indonesia" content="yes" />
     <meta name="Pustakaguru.id - Inovator Pendidikan Indonesia" content="black-translucent">
     <meta name="theme-color" content="#0096FF">
-    <title>Pustakaguru - <?= $menu?></title>
-    <meta name="description" content="Pustakguru.id">
+    <title>PT Pustaka Guru Indonesia - Inovator Pendidikan Indonesia</title>
+    <meta name="description" content="Pustaka Guru Indonesia - Inovator Pendidikan Indonesia | pustakguru.id">
     <meta name="keywords"
         content="pelatihan, guru, pelatihan guru indonesia, pppkguru" />
     <title>Edscience - <?= $menu ?></title>
     <link rel="icon" type="image/png" href="<?=base_url()?>/assets/img/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?=base_url()?>/assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?=base_url()?>/assets/img/foto/pelatihantiktok.jpg">
     <link rel="stylesheet" href="<?=base_url()?>/assets/css/style.css">
     <link rel="manifest" href="<?=base_url()?>/__manifest.json">
 </head>
