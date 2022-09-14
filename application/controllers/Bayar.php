@@ -26,8 +26,8 @@ class Bayar extends CI_Controller
 		// $va = '0000001231390340';
 		// $secret = 'SANDBOXB291D70F-A174-4054-AB38-E7637E83AD0D';
 
-        $url          = 'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
-        // $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
+        // $url          = 'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
+        $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
 
         $method       = 'POST'; //method
 
