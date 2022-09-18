@@ -120,6 +120,9 @@ class Bayar extends CI_Controller
 			if ($this->fungsi->pilihan("tb_pembelian","user_id",$params['user_id'])->num_rows() != null) {
 				$this->bayar_m->simpan($params);
 			}
+
+            $kalimat = "Terima kasih, *".$this->session->nama."*. Anda telah melakukan pembayaran. Nantikan webinarnya ya. Kami akan menghubungi bapak/ibu ketika hari H untuk memberikan link join meetnya.\n \nSalam Hangat dari Kami, *Komunitas Guru Indonesia* \nProvided by *PT Pustaka Guru Indonesia* \nhttps://pustakaguru.id";
+                $this->fungsi->sendWA($this->session->hp,$kalimat);
 			redirect('bayar/berhasil');
 		} else {
 			$this->session->set_flashdata('warning', 'Harap Lakukan pembayaran terlebih dahulu');
