@@ -35,7 +35,7 @@ class Pendaftaran_m extends CI_Model
 	function simpan($post)
 	{
 		$params['id'] =  "";
-		$params['username'] =  strtolower(substr($post['nama'],0,4)).substr($post['hp'],-4).date('y');
+		$params['username'] =  strtolower(substr($post['nama'],0,2)).substr($post['hp'],-4).date('yh');
 		$params['password'] =  substr($post['hp'],-4);
 		$params['nama'] =  $post['nama'];
 		$params['tempat_lahir'] =  ucwords(strtolower($post['tempat_lahir']));

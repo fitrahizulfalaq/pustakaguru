@@ -123,12 +123,12 @@ class Bayar extends CI_Controller
 
             $kalimat = "Terima kasih, *".$this->session->nama."*. Anda telah melakukan pembayaran. Nantikan webinarnya ya. Kami akan menghubungi bapak/ibu ketika hari H untuk memberikan link join meetnya.\n \nSalam Hangat dari Kami, *Komunitas Guru Indonesia* \nProvided by *PT Pustaka Guru Indonesia* \nhttps://pustakaguru.id";
                 $this->fungsi->sendWA($this->session->hp,$kalimat);
-			redirect('bayar/berhasil');
-		} else {
-			$this->session->set_flashdata('warning', 'Harap Lakukan pembayaran terlebih dahulu');
-			redirect('dashboard');
-		}
-
+                redirect('bayar/berhasil');
+            } else {
+                $this->session->set_flashdata('warning', 'Harap Lakukan pembayaran terlebih dahulu');
+                redirect('dashboard');
+            }
+            
     }
 
 	public function berhasil()
@@ -136,16 +136,22 @@ class Bayar extends CI_Controller
 		$data['menu'] = "Pembayaran Berhasil";
 		$this->templateadmin->load('template/tanpa-buttom','page/bayar/berhasil',$data);
     }
-
+    
 	public function manual()
 	{
-		$data['menu'] = "Petunjuk Pembayaran Manual";
+        $data['menu'] = "Petunjuk Pembayaran Manual";
 		$this->templateadmin->load('template/tanpa-buttom','page/bayar/manual',$data);
 	}
-
+    
 	public function konfirmasiOnline()
 	{
-		$data['menu'] = "Petunjuk Pembayaran Otomatis";
+        $data['menu'] = "Petunjuk Pembayaran Otomatis";
 		$this->templateadmin->load('template/tanpa-buttom','page/bayar/konfirmasiOnline',$data);
 	}
+
+    public function konfirmasiBayar()
+    {
+        $kalimat = "Terima kasih, Bapak Muchammad Fahrul Anda telah melakukan pembayaran. Nantikan webinarnya ya. Kami akan menghubungi bapak/ibu ketika hari H untuk memberikan link join meetnya.\n \nSalam Hangat dari Kami, *Komunitas Guru Indonesia* \nProvided by *PT Pustaka Guru Indonesia* \nhttps://pustakaguru.id";
+        $this->fungsi->sendWA("081216707159",$kalimat);
+    }
 }
