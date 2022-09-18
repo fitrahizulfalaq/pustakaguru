@@ -30,7 +30,7 @@
 				<div class="form-group basic">
 					<div class="input-wrapper">
 						<label class="label" for="nama">Nama</label>
-						<input type="nama" name="nama" class="form-control" id="username" placeholder="Ex: Fitrah Izul Falaq" value="<?= set_value('nama'); ?>" required>
+						<input type="nama" name="nama" class="form-control" id="username" placeholder="Ex: John Doe" value="<?= set_value('nama'); ?>" required>
 						<i class="clear-input">
 							<ion-icon name="close-circle"></ion-icon>
 						</i>
@@ -41,7 +41,7 @@
 				<div class="form-group basic">
 					<div class="input-wrapper">
 						<label class="label" for="email">E-mail</label>
-						<input type="email" name="email" class="form-control" id="email" placeholder="fitrah@bikinkarya.com" value="<?= set_value('email'); ?>" required>
+						<input type="email" name="email" class="form-control" id="email" placeholder="jhon@bikinkarya.com" value="<?= set_value('email'); ?>" required>
 						<i class="clear-input">
 							<ion-icon name="close-circle"></ion-icon>
 						</i>
