@@ -92,7 +92,9 @@ class Bayar extends CI_Controller
 			//Response
             $ret = json_decode($ret);
             if ($ret->Status == 200) {				
-				$this->bayar_m->proses($ret->Data->Url);			
+				$this->bayar_m->proses($ret->Data->Url);
+                $kalimat = "Terima kasih telah melakukan pemesanan, *".$this->session->nama."*. Berikut link pembelian anda :\n\n".$ret->Data->Url."\nSalam Hangat dari Kami, *Komunitas Guru Indonesia* \nProvided by *PT Pustaka Guru Indonesia* \n https://pustakaguru.id";
+					$this->fungsi->sendWA($this->session->hp,$kalimat);			
                 $sessionId  = $ret->Data->SessionID;
                 $url        =  $ret->Data->Url;
                 header('Location:' . $url);
