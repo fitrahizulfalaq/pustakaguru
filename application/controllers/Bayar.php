@@ -151,7 +151,12 @@ class Bayar extends CI_Controller
 
     public function konfirmasiBayar()
     {
-        $kalimat = "Terima kasih, Bapak Muchammad Fahrul Anda telah melakukan pembayaran. Nantikan webinarnya ya. Kami akan menghubungi bapak/ibu ketika hari H untuk memberikan link join meetnya.\n \nSalam Hangat dari Kami, *Komunitas Guru Indonesia* \nProvided by *PT Pustaka Guru Indonesia* \nhttps://pustakaguru.id";
+        $nomor = $this->input->get("nomor");
+        $nama = $this->input->get("nama");
+
+        $kalimat = "Terima kasih, Bapak Fahrul Anda telah melakukan pemesan. Silahkan melanjutkan pembayaran melalui VA dengan Kode Pembayaran 3811800034947122 (BCA). Nantikan webinarnya ya. Kami akan menghubungi bapak/ibu ketika hari H untuk memberikan link join meetnya.\n \nSalam Hangat dari Kami, *Komunitas Guru Indonesia* \nProvided by *PT Pustaka Guru Indonesia* \nhttps://pustakaguru.id";
+
+        
         $this->fungsi->sendWA("081216707159",$kalimat);
     }
 }

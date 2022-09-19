@@ -181,7 +181,7 @@ class Fungsi {
 
 		$data = json_decode($response);
 		if ($data->kode == 200) {
-			// $this->ci->session->set_flashdata('success', 'Pesan Terkirim');
+			$this->ci->session->set_flashdata('success', 'Pesan Terkirim');
 			// redirect($redirect);
 		} else {
 			$this->ci->session->set_flashdata('warning', $data->message);

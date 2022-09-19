@@ -76,8 +76,8 @@ class Pendaftaran extends CI_Controller
 			if ($this->db->affected_rows() > 0) {
 				$this->session->set_flashdata('success', 'Pendaftaran Berhasil, Sekarang anda bisa login menggunakan email dan password 4 angka belakang nomor anda');
 				
-				$kalimat = "Terima kasih, *".$post['nama']."*. Anda telah melakukan pendaftaran. \n \n"."Selamat menjelajah.\nSalam Hangat dari Kami, *Komunitas Guru Indonesia* \nProvided by *PT Pustaka Guru Indonesia* \n https://pustakaguru.id";
-					$this->fungsi->sendWA($post['hp'],$kalimat);
+				// $kalimat = "Terima kasih, *".$post['nama']."*. Anda telah melakukan pendaftaran. \n \n"."Selamat menjelajah.\nSalam Hangat dari Kami, *Komunitas Guru Indonesia* \nProvided by *PT Pustaka Guru Indonesia* \n https://pustakaguru.id";
+				// 	$this->fungsi->sendWA($post['hp'],$kalimat);
 			}
 
 			//Setelah mendaftar langsung login ke Platform
