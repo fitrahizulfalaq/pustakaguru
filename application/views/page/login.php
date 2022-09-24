@@ -71,9 +71,9 @@
 
                 <div class="form-links mt-2">
                     <div>
-                        <a href="<?= base_url('pendaftaran/tambah/')?>">Belum punya akun? Daftar Sekarang</a>
+                        <a href="<?= base_url('pendaftaran/tambah/')?>">Daftar Sekarang</a>
                     </div>
-                    <!-- <div><a href="app-forgot-password.html" class="text-muted">Forgot Password?</a></div> -->
+                    <div><a href="<?= base_url('pendaftaran/forget')?>" class="text-muted">Lupa Password?</a></div>
                 </div>
 
                 <div class="form-button-group  transparent">

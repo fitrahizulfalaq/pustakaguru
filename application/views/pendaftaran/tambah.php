@@ -1,7 +1,7 @@
 <!-- App Header -->
 <div class="appHeader no-border transparent position-absolute">
 	<div class="left">
-		<a href="#" class="headerButton goBack">
+		<a href="<?=base_url()?>" class="headerButton goBack">
 			<ion-icon name="chevron-back-outline"></ion-icon>
 		</a>
 	</div>
@@ -30,7 +30,7 @@
 				<div class="form-group basic">
 					<div class="input-wrapper">
 						<label class="label" for="nama">Nama</label>
-						<input type="nama" name="nama" class="form-control" id="username" placeholder="Ex: John Doe" value="<?= set_value('nama'); ?>" required>
+						<input type="nama" name="nama" class="form-control" id="username" placeholder="Ex: Muhammad Firdaus" value="<?= set_value('nama'); ?>" required>
 						<i class="clear-input">
 							<ion-icon name="close-circle"></ion-icon>
 						</i>
@@ -41,7 +41,7 @@
 				<div class="form-group basic">
 					<div class="input-wrapper">
 						<label class="label" for="email">E-mail</label>
-						<input type="email" name="email" class="form-control" id="email" placeholder="jhon@bikinkarya.com" value="<?= set_value('email'); ?>" required>
+						<input type="email" name="email" class="form-control" id="email" placeholder="firdaus@bikinkarya.com" value="<?= set_value('email'); ?>" required>
 						<i class="clear-input">
 							<ion-icon name="close-circle"></ion-icon>
 						</i>
@@ -60,7 +60,7 @@
 					<?php echo form_error('hp') ?>
 				</div>
 
-				<div class="form-group basic">
+				<!-- <div class="form-group basic">
 					<div class="input-wrapper">
 						<label class="label" for="tempat_lahir">Tempat Lahir</label>
 						<input type="text" name="tempat_lahir" class="form-control" id="tempat_lahir" placeholder="Probolinggo" value="<?= set_value('tempat_lahir'); ?>" required>
@@ -80,7 +80,7 @@
 						</i>
 					</div>
 					<?php echo form_error('tgl_lahir') ?>
-				</div>
+				</div> -->
 
 				<div class="form-group basic">
 					<div class="input-wrapper">

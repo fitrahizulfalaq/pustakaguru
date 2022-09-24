@@ -24,6 +24,14 @@ class Pendaftaran_m extends CI_Model
 		return $query;
 	}
 
+	public function getByPhone($hp = null)
+	{
+		$this->db->from('tb_user');
+		$this->db->where('hp', $hp);
+		$query = $this->db->get();
+		return $query;
+	}
+
 	public function getNonActive($id = null)
 	{
 		$this->db->from('tb_user');
@@ -38,8 +46,11 @@ class Pendaftaran_m extends CI_Model
 		$params['username'] =  strtolower(substr($post['nama'],0,2)).substr($post['hp'],-4).date('yh');
 		$params['password'] =  substr($post['hp'],-4);
 		$params['nama'] =  $post['nama'];
-		$params['tempat_lahir'] =  ucwords(strtolower($post['tempat_lahir']));
-		$params['tgl_lahir'] =  $post['tgl_lahir'];
+		// $params['tempat_lahir'] =  ucwords(strtolower($post['tempat_lahir']));
+		// $params['tgl_lahir'] =  $post['tgl_lahir'];
+		// Mematikan dulu fitur tempat_lahir dan tgl_lahir
+		$params['tempat_lahir'] = "Online";
+		$params['tgl_lahir'] = date("Y:m:d");
 		$params['hp'] =  $post['hp'];
 		$params['email'] =  $post['email'];
 		$params['created'] =  date("Y:m:d:h:i:sa");
@@ -48,7 +59,6 @@ class Pendaftaran_m extends CI_Model
 		$params['ip_address'] =  $this->input->ip_address();
 		$params['referal'] =  $post['referal'];
 		$this->db->insert('tb_user', $params);
-
 
 	}
 

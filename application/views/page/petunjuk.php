@@ -10,7 +10,7 @@
 		</h1>
 
 		<div class="lead">
-			Saat ini, platform ini dalam tahap pengembangan (Uji Coba). Anda hanya bisa mendapatkan informasi pelatihan terbaru dari PT Pustaka Guru Indonesia.
+			Saat ini, platform ini dalam tahap pengembangan (Uji Coba). Anda hanya bisa mendapatkan informasi pelatihan terbaru dari PT PUSTAKA PENDIDIKAN INDONESIA.
 		</div>
 	</div>
 
