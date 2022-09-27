@@ -41,7 +41,7 @@ class Bayar extends CI_Controller
         //Request Body//
         $body['product']    = ['Tiket Tiktok'];
         $body['qty']        = ['1'];
-        $body['price']      = ['10000'];
+        $body['price']      = ['25000'];
         $body['buyerName']      = $username;
         $body['buyerPhone']      = $buyerPhone;
         $body['buyerEmail']      = $email;
