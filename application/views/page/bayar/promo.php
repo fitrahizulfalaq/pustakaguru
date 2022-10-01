@@ -20,13 +20,13 @@
                 </a><br>
             </div>
             <div class="alert alert-warning mb-1" role="alert">
-                <a href="<?= base_url("bayar?")."username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp."&harga=30000&jumlah=1" ?>" class="btn btn-warning btn-block">
+                <a href="<?= base_url("bayar?")."username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp."&harga=15000&jumlah=2" ?>" class="btn btn-warning btn-block">
                     <ion-icon name="star-outline"></ion-icon> 2 Tiket / 30.000
                 </a><br>
             </div>
             <div class="alert alert-warning mb-1" role="alert">
-                <a href="<?= base_url("bayar?")."username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp."&harga=50000&jumlah=1" ?>" class="btn btn-warning btn-block">
-                    <ion-icon name="star-outline"></ion-icon> 4 Tiket / 50.000
+                <a href="<?= base_url("bayar?")."username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp."&harga=10000&jumlah=4" ?>" class="btn btn-warning btn-block">
+                    <ion-icon name="star-outline"></ion-icon> 4 Tiket / 40.000
                 </a><br>
             </div>
             <div class="alert alert-warning mb-1" role="alert">
