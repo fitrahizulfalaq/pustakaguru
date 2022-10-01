@@ -47,7 +47,7 @@
 										</div> -->
 										<h3 class="card-titlde mb-1">TikTok Hack: Cara Mendapatkan 10.000 Followers dan 1 Juta Views Tiktok Organik dalam 3 Bulan Pertama</h3>
 										<p align="left">
-											<ion-icon name="cash-outline" role="img" class="md hydrated" aria-label="link"></ion-icon> Tiket Harga Rp. 10.000 <br>
+											<ion-icon name="cash-outline" role="img" class="md hydrated" aria-label="link"></ion-icon> Tiket Harga Rp. 45.000 <br>
 											<ion-icon name="person-outline" role="img" class="md hydrated" aria-label="user"></ion-icon> 100 seat max <br>
 											<ion-icon name="time" role="img" class="md hydrated" aria-label="calendar"></ion-icon> 10 Sep 2022, mulai 19.30 <br>
 											Spesial Launching Pustakguru.id

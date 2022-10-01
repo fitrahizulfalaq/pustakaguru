@@ -29,7 +29,7 @@
 			</div>
 			<div class="col-6">
 				<!-- <a href="https://project.bikinkarya.com/bayar?<?= "username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp ?>" class="btn btn-lg btn-primary btn-block">LANJUT BAYAR</a> -->
-				<a href="<?= base_url("bayar?")."username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp ?>" class="btn btn-lg btn-primary btn-block" onclick="this.innerHTML='Proses Pembayaran, Mohon Menunggu'">LANJUT BAYAR</a>
+				<a href="<?= base_url("bayar?")."username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp."&harga=45000&jumlah=1" ?>" class="btn btn-lg btn-primary btn-block" onclick="this.innerHTML='Proses Pembayaran, Mohon Menunggu'">LANJUT BAYAR</a>
 			</div>
 		</div>
 	</div>
