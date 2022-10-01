@@ -19,29 +19,31 @@ class Bayar extends CI_Controller
 		}
 		
 		//Real
-		$va           = '1179001231390340'; //get on iPaymu dashboard
-        $secret       = '3A523EFD-6476-44B6-AE38-0AA82F94CEEA'; //get on iPaymu dashboard
+		// $va           = '1179001231390340'; //get on iPaymu dashboard
+        // $secret       = '3A523EFD-6476-44B6-AE38-0AA82F94CEEA'; //get on iPaymu dashboard
 
 		//sandbox
-		// $va = '0000001231390340';
-		// $secret = 'SANDBOXB291D70F-A174-4054-AB38-E7637E83AD0D';
+		$va = '0000001231390340';
+		$secret = 'SANDBOXB291D70F-A174-4054-AB38-E7637E83AD0D';
 
-        // $url          = 'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
-        $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
+        $url          = 'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
+        // $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
 
         $method       = 'POST'; //method
 
 		//Get data from request
 		$user_id = $this->input->get("userid");
 		$username = $this->input->get("username"); 
+		$jumlah = $this->input->get("jumlah"); 
+		$harga = $this->input->get("harga"); 
 		$buyerPhone = $this->input->get("hp"); 
 		$email = $this->input->get("email");
 		$status = $this->input->get("status");
 
         //Request Body//
         $body['product']    = ['Tiket Tiktok'];
-        $body['qty']        = ['1'];
-        $body['price']      = ['25000'];
+        $body['qty']        = [$jumlah];
+        $body['price']      = [$harga];
         $body['buyerName']      = $username;
         $body['buyerPhone']      = $buyerPhone;
         $body['buyerEmail']      = $email;
@@ -160,5 +162,16 @@ class Bayar extends CI_Controller
 
         
         $this->fungsi->sendWA("081216707159",$kalimat);
+    }
+
+    public function promo()
+    {
+        $transaksi_terakhir = $this->bayar_m->cek($this->session->id);
+		if ($transaksi_terakhir->num_rows() != null ) {
+			redirect($transaksi_terakhir->row("url"));
+		}
+
+        $data['menu'] = "BELI TIKET TIKTOK";
+        $this->templateadmin->load('template/tanpa-buttom', 'page/bayar/promo', $data);
     }
 }

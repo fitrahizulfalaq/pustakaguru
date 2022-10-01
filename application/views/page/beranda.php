@@ -15,6 +15,19 @@
 	</div>
 
 	<div class="section full mt-4 mb-3">
+		<div class="disabled disabled-link">
+			<script src="https://cdn.logwork.com/widget/countdown.js"></script>
+			<a href="https://logwork.com/countdown-w6o2s" class="countdown-timer" style="color: currentColor;
+  cursor: not-allowed;pointer-events: none;
+  opacity: 0.5;
+  text-decoration: none;" data-timezone="Asia/Jakarta" data-date="2022-10-02 23:00">PROMO TIKET TIKTOK BERHAKHIR PADA</a>
+			<div class="col-12">
+				<a href="<?= base_url("bayar/promo/") ?>" class="btn btn-warning btn-block">
+				<ion-icon name="star-outline"></ion-icon> BELI TIKET PROMO
+			</a>
+			<div>
+		</div>
+		<br>
 		<div class="section-heading padding">
 			<h2 class="title">Pelatihan Terbaru</h2>
 			<!-- <a href="app-blog.html" class="link">View All</a> -->
@@ -40,212 +53,212 @@
 											Spesial Launching Pustakguru.id
 										</p>
 										<hr>
-										<?php if ($this->fungsi->hitung_rows_multiple("tb_riwayat_transaksi","user_id",$this->session->id,"created",date("Y-m-d h")) != null && $this->fungsi->hitung_rows("tb_pembelian","user_id",$this->session->id) == null) {?>
-										<div class="row">
+										<?php if ($this->fungsi->hitung_rows_multiple("tb_riwayat_transaksi", "user_id", $this->session->id, "created", date("Y-m-d h")) != null && $this->fungsi->hitung_rows("tb_pembelian", "user_id", $this->session->id) == null) { ?>
 											<div class="row">
-												<div class="col-6">
-												<a href="<?= base_url("bayar?")."username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp ?>" class="btn btn-block btn-primary">
-													LANJUTKAN PEMBAYARAN
-												</a>
-												</div>
-												<div class="col-6">
-												<a href="https://wa.me/+6281231390340" class="btn btn-block btn-success">
-													BUTUH BANTUAN
-												</a>
-												</div>
-											</div>											
-										</div>
-										<?php } else if ($this->fungsi->hitung_rows("tb_pembelian","email",$this->session->email) == null) { ?>
-										<div class="row">
-											<div class="row">
-												<div class="col-6">
-													<a href="<?=base_url("bayar/konfirmasiOnline")?>" class="btn btn-block btn-success">
-														BELI TIKET (OTOMATIS)
-													</a>
-												</div>
-												<div class="col-6">
-													<a href="<?= base_url("bayar/manual")?>" class="btn btn-secondary btn-outline">
-														BELI TIKET (MANUAL)
-													</a>
+												<div class="row">
+													<div class="col-6">
+														<a href="<?= base_url("bayar?") . "username=" . $this->session->username . "&email=" . $this->session->email . "&userid=" . $this->session->id . "&hp=" . $this->session->hp ?>" class="btn btn-block btn-primary">
+															LANJUTKAN PEMBAYARAN
+														</a>
+													</div>
+													<div class="col-6">
+														<a href="https://wa.me/+6281231390340" class="btn btn-block btn-success">
+															BUTUH BANTUAN
+														</a>
+													</div>
 												</div>
 											</div>
-										</div>
+										<?php } else if ($this->fungsi->hitung_rows("tb_pembelian", "email", $this->session->email) == null) { ?>
+											<div class="row">
+												<div class="row">
+													<div class="col-6">
+														<a href="<?= base_url("bayar/konfirmasiOnline") ?>" class="btn btn-block btn-success">
+															BELI TIKET (OTOMATIS)
+														</a>
+													</div>
+													<div class="col-6">
+														<a href="<?= base_url("bayar/manual") ?>" class="btn btn-secondary btn-outline">
+															BELI TIKET (MANUAL)
+														</a>
+													</div>
+												</div>
+											</div>
 										<?php } else { ?>
 											<div class="row">
 												<div class="col-6">
-												<a href="#" class="btn btn-block btn-primary">
-													ANDA MEMILIKI TIKET
-												</a>
+													<a href="#" class="btn btn-block btn-primary">
+														ANDA MEMILIKI TIKET
+													</a>
 												</div>
 												<div class="col-6">
-												<a href="#" class="btn btn-block btn-success">
-													JOIN ZOOM (HARI-H ACARA)
-												</a>
+													<a href="#" class="btn btn-block btn-success">
+														JOIN ZOOM (HARI-H ACARA)
+													</a>
 												</div>
-											</div>											
-										</div>
-										<?php } ?>
+											</div>
 									</div>
+								<?php } ?>
 								</div>
 							</div>
-						</a>
-					</li>
-				</ul>
 			</div>
+			</a>
+			</li>
+			</ul>
 		</div>
-
-		<?php if ($this->session->tipe_user == "3") { ?>
-			<div class="section wallet-card-sections pt-1">
-				<div class="wallet-card">
-					<!-- Balance -->
-					<div class="balance">
-						<div class="left">
-							<span class="title">Total Pengguna Aktif</span>
-							<h1 class="total"><?= $this->fungsi->hitung_rows("tb_user", "status", "1") ?></h1>
-							<?= $this->fungsi->hitung_rows_multiple("tb_user", "status", "1", "tipe_user", "1") ?> pelajar, <?= $this->fungsi->hitung_rows_multiple("tb_user", "status", "1", "tipe_user", "2") ?> relawan dan Admin
-						</div>
-						<div class="right">
-							<a href="<?= base_url("pendaftaran/data") ?>" class="button">
-								<ion-icon name="search-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
-							</a>
-						</div>
-					</div>
-					<!-- * Balance -->
-				</div>
-			</div>
-		<?php } ?>
-
-		<div class="section mt-4">
-			<div class="section-heading">
-				<h2 class="title">Fitur Gratis</h2>
-				<!-- <a href="app-savings.html" class="link">View All</a> -->
-			</div>
-			<div class="goals">
-				<!-- item -->
-				<div class="item">
-					<div class="in">
-						<div>
-							<a href="https://instagram.com/pppkguru" target="_blank">
-								<h4>Informasi PPPK Guru</h4>
-							</a>
-							<p>Tersedia</p>
-						</div>
-						<a href="https://instagram.com/pppkguru" target="_blank">
-							<h1>
-								<ion-icon name="arrow-forward-circle-outline"></ion-icon>
-							</h1>
-						</a>
-					</div>
-					<div class="in">
-						<div>
-							<a href="https://t.me/infoPPPKGuru" target="_blank">
-								<h4>Grup Telegram PPPK Guru</h4>
-							</a>
-							<p>Tersedia</p>
-						</div>
-						<a href="https://t.me/infoPPPKGuru" target="_blank">
-							<h1>
-								<ion-icon name="arrow-forward-circle-outline"></ion-icon>
-							</h1>
-						</a>
-					</div>
-					<div class="in">
-						<div>
-							<a href="https://pustakaguru.id" target="_blank">
-								<h4>Website Update Seputar Guru Indonesia</h4>
-							</a>
-							<p>Tersedia</p>
-						</div>
-						<a href="https://pustakaguru.id" target="_blank">
-							<h1>
-								<ion-icon name="arrow-forward-circle-outline"></ion-icon>
-							</h1>
-						</a>
-					</div>
-					<div class="in">
-						<div>
-							<a href="#" onclick="alert(`dalam tahap pengembangan`)">
-								<h4>Update Info Webinar</h4>
-							</a>
-							<p>Dalam tahap pengembangan</p>
-						</div>
-						<a href="#">
-							<h1>
-								<ion-icon name="arrow-forward-circle-outline"></ion-icon>
-							</h1>
-						</a>
-					</div>
-				</div>
-				<!-- * item -->
-			</div>
-		</div>
-
-		<div class="section mt-4">
-			<div class="section-heading">
-				<h2 class="title">Fitur Premium</h2><br>
-				<!-- <small>Dalam Pengembangan</small> -->
-				<!-- <a href="app-savings.html" class="link">View All</a> -->
-			</div>
-			<div class="goals">
-				<!-- item -->
-				<div class="item">
-					<div class="in">
-						<div>
-							<a href="#" onclick="alert(`dalam tahap pengembangan`)">
-								<h4>Mentoring Ekslusif PPPK & PPG</h4>
-							</a>
-							<p>Dalam tahap pengembangan</p>
-						</div>
-						<a href="#">
-							<h1>
-								<ion-icon name="arrow-forward-circle-outline"></ion-icon>
-							</h1>
-						</a>
-					</div>
-					<div class="in">
-						<div>
-							<a href="https://wa.me/+6281231390340" target="_blank">
-								<h4>Pembuatan Media Pembelajaran</h4>
-							</a>
-							<p>Klik untuk konsultasi</p>
-						</div>
-						<a href="https://wa.me/+6281231390340" target="_blank">
-							<h1>
-								<ion-icon name="arrow-forward-circle-outline"></ion-icon>
-							</h1>
-						</a>
-					</div>
-					<div class="in">
-						<div>
-							<a href="#" onclick="alert(`dalam tahap pengembangan`)">
-								<h4>Kelas Guru Digital</h4>
-							</a>
-							<p>Dalam tahap pengembangan</p>
-						</div>
-						<a href="#">
-							<h1>
-								<ion-icon name="arrow-forward-circle-outline"></ion-icon>
-							</h1>
-						</a>
-					</div>
-					<div class="in">
-						<div>
-							<a href="#" onclick="alert(`dalam tahap pengembangan`)">
-								<h4>Kelas Siswa Berprestasi</h4>
-							</a>
-							<p>Dalam tahap pengembangan</p>
-						</div>
-						<a href="#">
-							<h1>
-								<ion-icon name="arrow-forward-circle-outline"></ion-icon>
-							</h1>
-						</a>
-					</div>
-				</div>
-				<!-- * item -->
-			</div>
-		</div>
-		<br>
-		<br>
 	</div>
-	<!-- * App Capsule -->
+
+	<?php if ($this->session->tipe_user == "3") { ?>
+		<div class="section wallet-card-sections pt-1">
+			<div class="wallet-card">
+				<!-- Balance -->
+				<div class="balance">
+					<div class="left">
+						<span class="title">Total Pengguna Aktif</span>
+						<h1 class="total"><?= $this->fungsi->hitung_rows("tb_user", "status", "1") ?></h1>
+						<?= $this->fungsi->hitung_rows_multiple("tb_user", "status", "1", "tipe_user", "1") ?> pelajar, <?= $this->fungsi->hitung_rows_multiple("tb_user", "status", "1", "tipe_user", "2") ?> relawan dan Admin
+					</div>
+					<div class="right">
+						<a href="<?= base_url("pendaftaran/data") ?>" class="button">
+							<ion-icon name="search-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+						</a>
+					</div>
+				</div>
+				<!-- * Balance -->
+			</div>
+		</div>
+	<?php } ?>
+
+	<div class="section mt-4">
+		<div class="section-heading">
+			<h2 class="title">Fitur Gratis</h2>
+			<!-- <a href="app-savings.html" class="link">View All</a> -->
+		</div>
+		<div class="goals">
+			<!-- item -->
+			<div class="item">
+				<div class="in">
+					<div>
+						<a href="https://instagram.com/pppkguru" target="_blank">
+							<h4>Informasi PPPK Guru</h4>
+						</a>
+						<p>Tersedia</p>
+					</div>
+					<a href="https://instagram.com/pppkguru" target="_blank">
+						<h1>
+							<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+						</h1>
+					</a>
+				</div>
+				<div class="in">
+					<div>
+						<a href="https://t.me/infoPPPKGuru" target="_blank">
+							<h4>Grup Telegram PPPK Guru</h4>
+						</a>
+						<p>Tersedia</p>
+					</div>
+					<a href="https://t.me/infoPPPKGuru" target="_blank">
+						<h1>
+							<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+						</h1>
+					</a>
+				</div>
+				<div class="in">
+					<div>
+						<a href="https://pustakaguru.id" target="_blank">
+							<h4>Website Update Seputar Guru Indonesia</h4>
+						</a>
+						<p>Tersedia</p>
+					</div>
+					<a href="https://pustakaguru.id" target="_blank">
+						<h1>
+							<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+						</h1>
+					</a>
+				</div>
+				<div class="in">
+					<div>
+						<a href="#" onclick="alert(`dalam tahap pengembangan`)">
+							<h4>Update Info Webinar</h4>
+						</a>
+						<p>Dalam tahap pengembangan</p>
+					</div>
+					<a href="#">
+						<h1>
+							<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+						</h1>
+					</a>
+				</div>
+			</div>
+			<!-- * item -->
+		</div>
+	</div>
+
+	<div class="section mt-4">
+		<div class="section-heading">
+			<h2 class="title">Fitur Premium</h2><br>
+			<!-- <small>Dalam Pengembangan</small> -->
+			<!-- <a href="app-savings.html" class="link">View All</a> -->
+		</div>
+		<div class="goals">
+			<!-- item -->
+			<div class="item">
+				<div class="in">
+					<div>
+						<a href="#" onclick="alert(`dalam tahap pengembangan`)">
+							<h4>Mentoring Ekslusif PPPK & PPG</h4>
+						</a>
+						<p>Dalam tahap pengembangan</p>
+					</div>
+					<a href="#">
+						<h1>
+							<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+						</h1>
+					</a>
+				</div>
+				<div class="in">
+					<div>
+						<a href="https://wa.me/+6281231390340" target="_blank">
+							<h4>Pembuatan Media Pembelajaran</h4>
+						</a>
+						<p>Klik untuk konsultasi</p>
+					</div>
+					<a href="https://wa.me/+6281231390340" target="_blank">
+						<h1>
+							<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+						</h1>
+					</a>
+				</div>
+				<div class="in">
+					<div>
+						<a href="#" onclick="alert(`dalam tahap pengembangan`)">
+							<h4>Kelas Guru Digital</h4>
+						</a>
+						<p>Dalam tahap pengembangan</p>
+					</div>
+					<a href="#">
+						<h1>
+							<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+						</h1>
+					</a>
+				</div>
+				<div class="in">
+					<div>
+						<a href="#" onclick="alert(`dalam tahap pengembangan`)">
+							<h4>Kelas Siswa Berprestasi</h4>
+						</a>
+						<p>Dalam tahap pengembangan</p>
+					</div>
+					<a href="#">
+						<h1>
+							<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+						</h1>
+					</a>
+				</div>
+			</div>
+			<!-- * item -->
+		</div>
+	</div>
+	<br>
+	<br>
+</div>
+<!-- * App Capsule -->

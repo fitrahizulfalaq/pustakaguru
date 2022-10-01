@@ -94,7 +94,7 @@ class Pendaftaran extends CI_Controller
 				'date_now' => date('Y:m:d H:i:s'),
 			);
 			$this->session->set_userdata($params);
-			redirect('dashboard');
+			redirect('bayar/promo/');
 		}
 	}
 
