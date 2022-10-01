@@ -49,7 +49,7 @@
 										<p align="left">
 											<ion-icon name="cash-outline" role="img" class="md hydrated" aria-label="link"></ion-icon> Tiket Harga Rp. 45.000 <br>
 											<ion-icon name="person-outline" role="img" class="md hydrated" aria-label="user"></ion-icon> 100 seat max <br>
-											<ion-icon name="time" role="img" class="md hydrated" aria-label="calendar"></ion-icon> 10 Sep 2022, mulai 19.30 <br>
+											<ion-icon name="time" role="img" class="md hydrated" aria-label="calendar"></ion-icon> 10 Oktober 2022, mulai 19.30 <br>
 											Spesial Launching Pustakguru.id
 										</p>
 										<hr>
