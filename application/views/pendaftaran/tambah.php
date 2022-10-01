@@ -27,7 +27,7 @@
 <a href="https://logwork.com/countdown-w6o2s" class="countdown-timer" style="color: currentColor;
   cursor: not-allowed;pointer-events: none;
   opacity: 0.5;
-  text-decoration: none;" data-timezone="Asia/Jakarta" data-date="2022-10-02 23:00">PROMO BERHAKHIR PADA</a>
+  text-decoration: none;" data-timezone="Asia/Jakarta" data-date="2022-10-02 23:00">PROMO HARGA KHUSUS BERHAKHIR PADA</a>
             </div>
 
 	<div class="section mb-5 p-2">
