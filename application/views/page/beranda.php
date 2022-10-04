@@ -31,7 +31,7 @@
 			<!-- Wallet Footer -->
 			<div class="wallet-footer">
 				<div class="item">
-					<a href="#" data-bs-toggle="modal" data-bs-target="#withdrawActionSheet">
+					<a href="#" data-bs-toggle="modal">
 						<div class="icon-wrapper bg-danger">
 							<ion-icon name="arrow-down-outline"></ion-icon>
 						</div>
@@ -39,7 +39,7 @@
 					</a>
 				</div>
 				<div class="item">
-					<a href="#" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
+					<a href="#" data-bs-toggle="modal">
 						<div class="icon-wrapper">
 							<ion-icon name="arrow-forward-outline"></ion-icon>
 						</div>
@@ -55,7 +55,7 @@
 					</a>
 				</div>
 				<div class="item">
-					<a href="https://tryout.pustakaguru.id" data-bs-toggle="modal" data-bs-target="#exchangeActionSheet">
+					<a href="https://tryout.pustakaguru.id">
 						<div class="icon-wrapper bg-warning">
 							<ion-icon name="swap-vertical"></ion-icon>
 						</div>
