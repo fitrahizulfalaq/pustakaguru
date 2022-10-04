@@ -18,11 +18,11 @@
 				<div class="left">
 					<span class="title">Total Poin</span>
 					<h1 class="total">
-						<ion-icon name="cash-outline"></ion-icon> 50
+						<ion-icon name="cash-outline"></ion-icon> <?= $this->fungsi->getSaldo($this->session->id) ?>
 					</h1>
 				</div>
 				<div class="right">
-					<a href="#" class="button">
+					<a href="<?=base_url("topup")?>" class="button">
 						<ion-icon name="add-outline"></ion-icon>
 					</a>
 				</div>
@@ -31,7 +31,7 @@
 			<!-- Wallet Footer -->
 			<div class="wallet-footer">
 				<div class="item">
-					<a href="#" data-bs-toggle="modal">
+					<a href="<?=base_url("topup/riwayat")?>">
 						<div class="icon-wrapper bg-danger">
 							<ion-icon name="arrow-down-outline"></ion-icon>
 						</div>
@@ -39,7 +39,7 @@
 					</a>
 				</div>
 				<div class="item">
-					<a href="#" data-bs-toggle="modal">
+					<a href="<?=base_url("topup/paymentHistory")?>">
 						<div class="icon-wrapper">
 							<ion-icon name="arrow-forward-outline"></ion-icon>
 						</div>

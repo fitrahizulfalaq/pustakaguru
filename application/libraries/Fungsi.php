@@ -190,6 +190,28 @@ class Fungsi {
 
 	}
 
+	//TOPUP
+	function getPoin($user_id) {		
+		$this->ci->db->where("id",$user_id);
+		$query = $this->ci->db->get("tb_user")->row("poin");
+		return $query;
+	}
+
+	function getSaldo($id) {
+		$this->ci->db->select_sum("poin");		
+		$this->ci->db->where("user_id",$id);		
+		$this->ci->db->where("tipe","debit");		
+		$debit = $this->ci->db->get("tb_neraca")->row("poin");
+
+		$this->ci->db->select_sum("poin");		
+		$this->ci->db->where("user_id",$id);		
+		$this->ci->db->where("tipe","kredit");		
+		$kredit = $this->ci->db->get("tb_neraca")->row("poin");
+		
+		$hasil = $debit - $kredit;
+		return $hasil;
+	}
+
 
 }
 
