@@ -18,7 +18,7 @@ class Tema extends CI_Controller {
 	public function list()
 	{
 		$id	= $this->uri->segment(3);
-		$data['menu'] = "List Tema Kelas";
+		$data['menu'] = "List Materi";
 		$data['row'] = $this->tema_m->getKelas($id);
 		$data['kelas'] = $this->uri->segment(3);
 		$this->templateadmin->load('template/detail','tema/list',$data);
@@ -30,8 +30,9 @@ class Tema extends CI_Controller {
 		//Cek Akses yang bisa menambahkan hanya relawan
 		$tipe_user = $this->session->tipe_user;
 		
-		if ($tipe_user != 2) {
+		if ($tipe_user < 2) {
 			$this->session->set_flashdata('danger','Hanya relawan yang bisa menambahkan data');
+			redirect("");
 		}
 		
 		//Load librarynya dulu

@@ -1,7 +1,7 @@
 <div id="appCapsule">
 	<div class="section full gradientSection">
 		<div class="in">
-			<h1 class="total">List Tema: Kelas <?= $kelas ?></h1>
+			<h1 class="total">List Materi</h1>
 		</div>
 	</div>
 
@@ -19,7 +19,7 @@
 							<p>Tersedia <?= $this->fungsi->pilihan_advanced("tb_subtema", "tema_id", $data->id)->num_rows() ?> Sub Tema</p>
 						</div>
 						<h1>
-							<?php if ($this->session->tipe_user == 2) { ?>
+							<?php if ($this->session->tipe_user >= 2) { ?>
 								<a href="<?= base_url("tema/hapus/" . $data->id."/kelas/".$this->uri->segment(3)) ?>" class="text-black" onclick="return confirm('Yakin mau dihapus ?')">
 									<ion-icon name="trash-outline"></ion-icon>
 									</ion-icon>
@@ -39,7 +39,7 @@
 				Tidak ada data
 			</div>
 		<?php } ?>
-		<?php if ($this->session->tipe_user == 2) { ?>
+		<?php if ($this->session->tipe_user >= 2) { ?>
 			<div>
 				<br><a href="<?= base_url("tema/tambah/" . $kelas) ?>" class="btn btn-outline-success me-1 mb-1">Tambah Data</a>
 			</div>

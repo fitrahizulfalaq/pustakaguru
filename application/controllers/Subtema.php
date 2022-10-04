@@ -46,8 +46,9 @@ class Subtema extends CI_Controller
 		//Cek Akses yang bisa menambahkan hanya relawan
 		$tipe_user = $this->session->tipe_user;
 
-		if ($tipe_user != 2) {
+		if ($tipe_user < 2) {
 			$this->session->set_flashdata('danger', 'Hanya relawan yang bisa menambahkan data');
+			redirect("");
 		}
 
 		//Load librarynya dulu
@@ -86,8 +87,9 @@ class Subtema extends CI_Controller
 		//Cek Akses yang bisa menambahkan hanya relawan
 		$tipe_user = $this->session->tipe_user;
 
-		if ($tipe_user != 2) {
+		if ($tipe_user < 2) {
 			$this->session->set_flashdata('danger', 'Hanya relawan yang bisa menambahkan data');
+			redirect("");
 		}
 
 		//Load librarynya dulu

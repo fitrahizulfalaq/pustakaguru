@@ -12,60 +12,62 @@
 
 	<!-- Wallet Card -->
 	<div class="section wallet-card-section pt-1">
-            <div class="wallet-card">
-                <!-- Balance -->
-                <div class="balance">
-                    <div class="left">
-                        <span class="title">Total Poin</span>
-                        <h1 class="total"><ion-icon name="cash-outline"></ion-icon> 50</h1>
-                    </div>
-                    <div class="right">
-                        <a href="#" class="button">
-                            <ion-icon name="add-outline"></ion-icon>
-                        </a>
-                    </div>
-                </div>
-                <!-- * Balance -->
-                <!-- Wallet Footer -->
-                <div class="wallet-footer">
-                    <div class="item">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#withdrawActionSheet">
-                            <div class="icon-wrapper bg-danger">
-                                <ion-icon name="arrow-down-outline"></ion-icon>
-                            </div>
-                            <strong>Riwayat Pembelian</strong>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
-                            <div class="icon-wrapper">
-                                <ion-icon name="arrow-forward-outline"></ion-icon>
-                            </div>
-                            <strong>Riwayat Top UP</strong>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <div class="icon-wrapper bg-success">
-                                <ion-icon name="card-outline"></ion-icon>
-                            </div>
-                            <strong>Materi Saya</strong>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#exchangeActionSheet">
-                            <div class="icon-wrapper bg-warning">
-                                <ion-icon name="swap-vertical"></ion-icon>
-                            </div>
-                            <strong>Tryout</strong>
-                        </a>
-                    </div>
+		<div class="wallet-card">
+			<!-- Balance -->
+			<div class="balance">
+				<div class="left">
+					<span class="title">Total Poin</span>
+					<h1 class="total">
+						<ion-icon name="cash-outline"></ion-icon> 50
+					</h1>
+				</div>
+				<div class="right">
+					<a href="#" class="button">
+						<ion-icon name="add-outline"></ion-icon>
+					</a>
+				</div>
+			</div>
+			<!-- * Balance -->
+			<!-- Wallet Footer -->
+			<div class="wallet-footer">
+				<div class="item">
+					<a href="#" data-bs-toggle="modal" data-bs-target="#withdrawActionSheet">
+						<div class="icon-wrapper bg-danger">
+							<ion-icon name="arrow-down-outline"></ion-icon>
+						</div>
+						<strong>Riwayat Pembelian</strong>
+					</a>
+				</div>
+				<div class="item">
+					<a href="#" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
+						<div class="icon-wrapper">
+							<ion-icon name="arrow-forward-outline"></ion-icon>
+						</div>
+						<strong>Riwayat Top UP</strong>
+					</a>
+				</div>
+				<div class="item">
+					<a href="<?= base_url("page/menu") ?>">
+						<div class="icon-wrapper bg-success">
+							<ion-icon name="card-outline"></ion-icon>
+						</div>
+						<strong>Materi Saya</strong>
+					</a>
+				</div>
+				<div class="item">
+					<a href="https://tryout.pustakaguru.id" data-bs-toggle="modal" data-bs-target="#exchangeActionSheet">
+						<div class="icon-wrapper bg-warning">
+							<ion-icon name="swap-vertical"></ion-icon>
+						</div>
+						<strong>Tryout</strong>
+					</a>
+				</div>
 
-                </div>
-                <!-- * Wallet Footer -->
-            </div>
-        </div>
-        <!-- Wallet Card -->
+			</div>
+			<!-- * Wallet Footer -->
+		</div>
+	</div>
+	<!-- Wallet Card -->
 
 	<div class="section mt-4">
 		<?php $this->view('message') ?>
@@ -231,12 +233,12 @@
 						</div>
 						<div class="in">
 							<div>
-								<a href="#" onclick="alert(`dalam tahap pengembangan`)">
+								<a href="<?= base_url("page/menu") ?>">
 									<h4>Update Info Webinar</h4>
 								</a>
 								<p>Dalam tahap pengembangan</p>
 							</div>
-							<a href="#">
+							<a href="<?= base_url("page/menu") ?>">
 								<h1>
 									<ion-icon name="arrow-forward-circle-outline"></ion-icon>
 								</h1>
@@ -258,12 +260,25 @@
 					<div class="item">
 						<div class="in">
 							<div>
-								<a href="#" onclick="alert(`dalam tahap pengembangan`)">
-									<h4>Mentoring Ekslusif PPPK & PPG</h4>
+								<a href="https://mentoring.pustakaguru.id/">
+									<h4>Mentoring Ekslusif PPPK & CPNS</h4>
 								</a>
-								<p>Dalam tahap pengembangan</p>
+								<p>Tersedia paket mandiri dan berkelompok</p>
 							</div>
-							<a href="#">
+							<a href="https://mentoring.pustakaguru.id/">
+								<h1>
+									<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+								</h1>
+							</a>
+						</div>
+						<div class="in">
+							<div>
+								<a href="https://tryout.pustakaguru.id/">
+									<h4>Tryout Bersama</h4>
+								</a>
+								<p>Tersedia paket mandiri dan berkelompok</p>
+							</div>
+							<a href="https://tryout.pustakaguru.id/">
 								<h1>
 									<ion-icon name="arrow-forward-circle-outline"></ion-icon>
 								</h1>
@@ -284,12 +299,12 @@
 						</div>
 						<div class="in">
 							<div>
-								<a href="#" onclick="alert(`dalam tahap pengembangan`)">
+								<a href="https://bikinkarya.com">
 									<h4>Kelas Guru Digital</h4>
 								</a>
-								<p>Dalam tahap pengembangan</p>
+								<p>Klik untuk infromasi lebih lanjut</p>
 							</div>
-							<a href="#">
+							<a href="https://bikinkarya.com">
 								<h1>
 									<ion-icon name="arrow-forward-circle-outline"></ion-icon>
 								</h1>
@@ -297,12 +312,12 @@
 						</div>
 						<div class="in">
 							<div>
-								<a href="#" onclick="alert(`dalam tahap pengembangan`)">
+								<a href="https://bikinkarya.com">
 									<h4>Kelas Siswa Berprestasi</h4>
 								</a>
-								<p>Dalam tahap pengembangan</p>
+								<p>Klik untuk infromasi lebih lanjut</p>
 							</div>
-							<a href="#">
+							<a href="https://bikinkarya.com">
 								<h1>
 									<ion-icon name="arrow-forward-circle-outline"></ion-icon>
 								</h1>

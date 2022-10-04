@@ -36,8 +36,9 @@ class Page extends CI_Controller {
 	{
 		$data['menu'] = "Halaman Statis";
 		$id = $this->uri->segment("3");
-		$this->templateadmin->load('template/dashboard', 'page/menu/'.$id, $data);
+		$this->templateadmin->load('template/detail', 'page/menu_belajar'.$id, $data);
 	}
+	
 }
 
 

@@ -52,7 +52,7 @@
 			<div class="modal-header">
 				<h5 class="modal-title">Video <?= $data->deskripsi ?></h5>
 				<div>
-					<a href="<?= base_url("subtema/tambahvideo/" . $data->id) ?>"><?= $data->video != "" && $this->session->tipe_user == "2" ? "Edit" : ""; ?></a>
+					<a href="<?= base_url("subtema/tambahvideo/" . $data->id) ?>"><?= $data->video != "" && $this->session->tipe_user >= "2" ? "Edit" : ""; ?></a>
 					<a href="#" data-bs-dismiss="modal">Close</a>
 				</div>
 			</div>
@@ -61,7 +61,7 @@
 					<div class="alert alert-danger mb-1" role="alert">
 						Tidak ada data
 					</div>
-					<?php if ($this->session->tipe_user == 2) { ?>
+					<?php if ($this->session->tipe_user >= 2) { ?>
 						<div>
 							<br><a href="<?= base_url("subtema/tambahvideo/" . $data->id) ?>" class="btn btn-outline-success me-1 mb-1">Tambah Data</a>
 						</div>
@@ -82,7 +82,7 @@
 			<div class="modal-header">
 				<h5 class="modal-title">Modul <?= $data->deskripsi ?></h5>
 				<div>
-					<a href="<?= base_url("subtema/tambahmodul/" . $data->id) ?>"><?= $data->modul != "" && $this->session->tipe_user == "2" ? "Edit" : ""; ?></a>
+					<a href="<?= base_url("subtema/tambahmodul/" . $data->id) ?>"><?= $data->modul != "" && $this->session->tipe_user >= "2" ? "Edit" : ""; ?></a>
 					<a href="#" data-bs-dismiss="modal">Close</a>
 				</div>
 			</div>
@@ -91,7 +91,7 @@
 					<div class="alert alert-danger mb-1" role="alert">
 						Tidak ada data
 					</div>
-					<?php if ($this->session->tipe_user == 2) { ?>
+					<?php if ($this->session->tipe_user >= 2) { ?>
 						<div>
 							<br><a href="<?= base_url("subtema/tambahmodul/" . $data->id) ?>" class="btn btn-outline-success me-1 mb-1">Tambah Data</a>
 						</div>
@@ -131,7 +131,7 @@
 							Mohon Maaf, Saat Ini Tidak ada soal
 						</div>
 					<?php } ?>
-				<?php } else if ($this->session->tipe_user == "2") { ?>
+				<?php } else if ($this->session->tipe_user >= "2") { ?>
 					<h5><strong>PETUNJUK PENAMBAHAN SOAL:</strong></h5>
 					<ol start="1" type="1">
 						<li>Soal terdiri dari pilihan ganda.</li>

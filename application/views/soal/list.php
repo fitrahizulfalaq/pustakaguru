@@ -4,7 +4,7 @@
 		<div class="card">
 			<?php $this->view('message') ?>
 			<div class="table-responsive">
-				<?php if($this->session->tipe_user == 2) {?>
+				<?php if($this->session->tipe_user >= 2) {?>
 					<a href="<?= base_url("soal/tambah/".$id)?>" class="btn btn-outline-info me-1 mb-1">TAMBAH SOAL</a>
 				<?php } ?>
 				<table class="table table-striped">
@@ -19,7 +19,7 @@
 							<tr>
 								<td><?= $data->soal ?></td>
 								<td class="text-end text-primary">
-									<?php if($this->session->tipe_user == 2) {?>
+									<?php if($this->session->tipe_user >= 2) {?>
 									<a href="<?= base_url("soal/hapus/" . $data->id."/subtema/".$this->uri->segment(3)) ?>"> Hapus</a>
 									<?php } ?>
 								</td>
