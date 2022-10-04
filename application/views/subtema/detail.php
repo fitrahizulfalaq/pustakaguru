@@ -5,6 +5,7 @@
 			<h1 class="total"><?= $data->deskripsi ?></h1>
 		</div>
 	</div>
+	<?= $this->load->view("message")?>
 
 	<div class="section mt-3 mb-3">
 		<div class="card">
