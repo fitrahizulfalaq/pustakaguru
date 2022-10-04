@@ -92,15 +92,15 @@ class Topup extends CI_Controller
 
         
         //Real
-		// $va           = '1179001231390340'; //get on iPaymu dashboard
-        // $secret       = '3A523EFD-6476-44B6-AE38-0AA82F94CEEA'; //get on iPaymu dashboard
+		$va           = '1179001231390340'; //get on iPaymu dashboard
+        $secret       = '3A523EFD-6476-44B6-AE38-0AA82F94CEEA'; //get on iPaymu dashboard
 
 		//sandbox
-		$va = '0000001231390340';
-		$secret = 'SANDBOXB291D70F-A174-4054-AB38-E7637E83AD0D';
+		// $va = '0000001231390340';
+		// $secret = 'SANDBOXB291D70F-A174-4054-AB38-E7637E83AD0D';
 
-        $url          = 'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
-        // $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
+        // $url          = 'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
+        $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
 
         $method       = 'POST'; //method
 
@@ -180,15 +180,15 @@ class Topup extends CI_Controller
     public function check()
     {
        //Real
-		// $va           = '1179001231390340'; //get on iPaymu dashboard
-        // $secret       = '3A523EFD-6476-44B6-AE38-0AA82F94CEEA'; //get on iPaymu dashboard
+		$va           = '1179001231390340'; //get on iPaymu dashboard
+        $secret       = '3A523EFD-6476-44B6-AE38-0AA82F94CEEA'; //get on iPaymu dashboard
 
 		//sandbox
-		$va = '0000001231390340';
-		$secret = 'SANDBOXB291D70F-A174-4054-AB38-E7637E83AD0D';
+		// $va = '0000001231390340';
+		// $secret = 'SANDBOXB291D70F-A174-4054-AB38-E7637E83AD0D';
 
-        $url          = 'https://sandbox.ipaymu.com/api/v2/transaction'; // for development mode
-        // $url          = 'https://my.ipaymu.com/api/v2/transaction'; // for production mode
+        // $url          = 'https://sandbox.ipaymu.com/api/v2/transaction'; // for development mode
+        $url          = 'https://my.ipaymu.com/api/v2/transaction'; // for production mode
 
         $method       = 'POST'; //method
 
