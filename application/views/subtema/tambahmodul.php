@@ -21,6 +21,17 @@
 						</div>
 						<?php echo form_error('modul')?>
 					</div>
+					<div class="form-group basic">
+						<div class="input-wrapper">
+							<label class="label" for="harga_modul">Poin</label>
+							<input type="text" name="harga_modul" class="form-control" id="modul" placeholder="Ex: 30" value="<?= set_value('harga_modul');?>" minlength="1" maxlength="4">
+							<i class="clear-input">
+								<ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+							</i>
+							<small>*Harga</small>
+						</div>
+						<?php echo form_error('harga_modul')?>
+					</div>
 
 					<div class="mt-2">
 						<button type="submit" class="btn btn-primary btn-lg btn-block">Proses</button>

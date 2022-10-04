@@ -1,7 +1,7 @@
 <div id="appCapsule">
 	<div class="section full gradientSection">
 		<div class="in">
-			<h1 class="total">List Subtema: <?= $keterangan ?></h1>
+			<h1 class="total">Materi: <?= $keterangan ?></h1>
 		</div>
 	</div>
 

@@ -11,9 +11,15 @@
 			<div class="card-body">
 				<h1 class="card-title">Video</h1>
 				<p>Silahkan klik tombol dibawah untuk menonton video</p>
+				<?php if ($pembelian_video != null or $this->session->tipe_user >= 2 or $data->harga_video == "0") { ?>
 				<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalVideo">
 					<ion-icon name="videocam-outline"></ion-icon> Tonton Video
 				</a>
+				<?php } else { ?>
+					<a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#beliVideo">
+						<ion-icon name="lock-closed-outline"></ion-icon> Beli
+					</a>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -23,9 +29,15 @@
 			<div class="card-body">
 				<h1 class="card-title">Modul</h1>
 				<p>Silahkan klik tombol dibawah untuk membaca modul</p>
-				<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalModul">
-					<ion-icon name="book-outline"></ion-icon> Baca Modul
-				</a>
+				<?php if ($pembelian_modul != null or $this->session->tipe_user >= 2 or $data->harga_modul == "0") { ?>
+					<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalModul">
+						<ion-icon name="book-outline"></ion-icon> Baca Modul
+					</a>
+				<?php } else { ?>
+					<a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#beliModul">
+						<ion-icon name="lock-closed-outline"></ion-icon> Beli
+					</a>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -35,9 +47,15 @@
 			<div class="card-body">
 				<h1 class="card-title">Kuis</h1>
 				<p>Silahkan klik tombol dibawah untuk mengerjakan quis</p>
+				<?php if ($pembelian_kuis != null or $this->session->tipe_user >= 2) { ?>
 				<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalKuis">
 					<ion-icon name="reader-outline"></ion-icon> Kerjakan Kuis
 				</a>
+				<?php } else { ?>
+					<a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#beliKuis">
+						<ion-icon name="lock-closed-outline"></ion-icon> Beli
+					</a>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -124,8 +142,8 @@
 						<li>Untuk soal pilihan ganda, klik pada pilihan a, b, c, dan d pada jawaban yang Anda anggap benar.</li>
 						<li>Setelah semua pertanyaan selesai dijawab, nilai skor soal Pilihan Ganda secara otomatis akan langsung keluar </li>
 					</ol>
-					<?php if ($this->fungsi->pilihan_advanced("tb_soal","subtema_id",$data->id)->num_rows() != null) { ?>
-						<a href="<?= base_url("quiz/startQUiz/".$data->id)?>" class="btn btn-outline-info me-1 mb-1">KERJAKAN KUIS</a>
+					<?php if ($this->fungsi->pilihan_advanced("tb_soal", "subtema_id", $data->id)->num_rows() != null) { ?>
+						<a href="<?= base_url("quiz/startQUiz/" . $data->id) ?>" class="btn btn-outline-info me-1 mb-1">KERJAKAN KUIS</a>
 					<?php } else { ?>
 						<div class="alert alert-danger mb-1" role="alert">
 							Mohon Maaf, Saat Ini Tidak ada soal
@@ -138,13 +156,94 @@
 						<li>Masukkan data soal anda.</li>
 						<li>Klik simpan.</li>
 					</ol>
-					<a href="<?= base_url("soal/data/".$data->id)?>" class="btn btn-outline-info me-1 mb-1">TAMBAH SOAL</a>
+					<a href="<?= base_url("soal/data/" . $data->id) ?>" class="btn btn-outline-info me-1 mb-1">TAMBAH SOAL</a>
 				<?php } else { ?>
 					<h5><strong>ANDA ADALAH ADMIN</strong></h5>
-					<a href="<?= base_url("soal/data/".$data->id)?>" class="btn btn-outline-info me-1 mb-1">LIHAT SOAL</a>
+					<a href="<?= base_url("soal/data/" . $data->id) ?>" class="btn btn-outline-info me-1 mb-1">LIHAT SOAL</a>
 				<?php } ?>
 			</div>
 		</div>
 	</div>
 </div>
 <!-- * Modal Kuis -->
+
+<!-- Default Action Sheet -->
+<div class="modal fade action-sheet" id="beliVideo" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Konfirmasi Pembelian Video</h5>
+			</div>
+			<div class="modal-body">
+				<ul class="action-button-list">
+					<li>
+						<a href="<?= base_url("topup/beli?topik=" . $data->id . "&produk=video&harga=".$data->harga_video) ?>" class="btn btn-list">
+							<span>Beli</span>
+						</a>
+					</li>
+					<li class="action-divider"></li>
+					<li>
+						<a href="#" class="btn btn-list text-danger" data-bs-dismiss="modal">
+							<span>Batal</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- * Default Action Sheet -->
+
+<!-- Default Action Sheet -->
+<div class="modal fade action-sheet" id="beliModul" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Konfirmasi Pembelian Modul</h5>
+			</div>
+			<div class="modal-body">
+				<ul class="action-button-list">
+					<li>
+						<a href="<?= base_url("topup/beli?topik=" . $data->id . "&produk=modul&harga=".$data->harga_modul) ?>" class="btn btn-list">
+							<span>Beli</span>
+						</a>
+					</li>
+					<li class="action-divider"></li>
+					<li>
+						<a href="#" class="btn btn-list text-danger" data-bs-dismiss="modal">
+							<span>Batal</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- * Default Action Sheet -->
+
+<!-- Default Action Sheet -->
+<div class="modal fade action-sheet" id="beliKuis" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Konfirmasi Pembelian Kuis</h5>
+			</div>
+			<div class="modal-body">
+				<ul class="action-button-list">
+					<li>
+						<a href="<?= base_url("topup/beli?topik=" . $data->id . "&produk=kuis&harga=".$data->harga_kuis) ?>" class="btn btn-list">
+							<span>Beli</span>
+						</a>
+					</li>
+					<li class="action-divider"></li>
+					<li>
+						<a href="#" class="btn btn-list text-danger" data-bs-dismiss="modal">
+							<span>Batal</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- * Default Action Sheet -->

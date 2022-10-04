@@ -39,6 +39,7 @@ class Subtema_m extends CI_Model
 	{
 		$params['id'] =  $post['id'];
 		$params['video'] =  $post['video'];
+		$params['harga_video'] =  $post['harga_video'];
 
 		$this->db->where('id', $params['id']);
 		$this->db->update('tb_subtema', $params);
@@ -48,6 +49,7 @@ class Subtema_m extends CI_Model
 	{
 		$params['id'] =  $post['id'];
 		$params['modul'] =  $post['modul'];
+		$params['harga_modul'] =  $post['harga_modul'];
 
 		$this->db->where('id', $params['id']);
 		$this->db->update('tb_subtema', $params);

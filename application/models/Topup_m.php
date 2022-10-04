@@ -19,7 +19,7 @@ class Topup_m extends CI_Model
 		if ($id != null) {
 			$this->db->where("user_id",$id);
 		}
-		$this->db->where("tipe","debit");
+		// $this->db->where("tipe","debit");
 		$this->db->order_by("created","DESC");
 		$query = $this->db->get();
 		return $query;

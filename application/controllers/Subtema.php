@@ -37,6 +37,9 @@ class Subtema extends CI_Controller
 		$id	= $this->uri->segment(3);
 
 		$data['menu'] = "Detail Subtema";
+		$data['pembelian_modul'] = $this->fungsi->pilihan_advanced_2("tb_neraca","user_id",$this->session->id,"keterangan","modul".$id)->num_rows();
+		$data['pembelian_video'] = $this->fungsi->pilihan_advanced_2("tb_neraca","user_id",$this->session->id,"keterangan","video".$id)->num_rows();
+		$data['pembelian_kuis'] = $this->fungsi->pilihan_advanced_2("tb_neraca","user_id",$this->session->id,"keterangan","kuis".$id)->num_rows();
 		$data['data'] = $this->subtema_m->get($id)->row();
 		$this->templateadmin->load('template/detail', 'subtema/detail', $data);
 	}
