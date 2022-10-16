@@ -86,7 +86,38 @@
     </div>
     <!-- * App Capsule -->
 
+    <!-- <audio id="audio" src="https://www.malangtimes.com/malangtimes.mp3"></audio>
+     <script>
+        document.body.onload = function() {musictime()};
+        function musictime() {
+            let panicNotification = new Audio('https://www.malangtimes.com/malangtimes.mp3');
+            var promise = panicNotification.play();
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    // Autoplay started!
+                    console.log("Autoplay started");
+                }).catch(error => {
+                    // Autoplay was prevented.
+                    // Show a "Play" button so that user can start playback.
+                    console.log("Autoplay gave some error", error);
+                    window.addEventListener("click", function () {
 
+                        var audio = document.getElementById("audio");
+                        audio.play();
+
+                    }, { once: true });
+            });
+        }
+        }
+        // Firefox 1.0+
+        var isFirefox = typeof InstallTrigger !== 'undefined';
+        // Chrome 1 - 79
+        var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+    </script> -->
 
     <!-- ========= JS Files =========  -->
     <!-- Bootstrap -->
