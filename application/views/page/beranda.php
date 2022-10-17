@@ -108,7 +108,7 @@
 					<li class="splide__slide splide__slide--clone" aria-hidden="true" tabindex="-1" style="margin-right: 16px; width: 332.667px;">
 						<div class="card">
 							<a href="https://member.pustakaguru.id/subtema/detail/36">
-								<img src="https://pustakaguru.test//assets/img/foto/pelatihantiktok.jpg" class="card-img-top" alt="image">
+								<img src="https://member.pustakaguru.id/assets/img/foto/pelatihantiktok.jpg" class="card-img-top" alt="image">
 							</a>
 						</div>
 						<div class="card-footer">
