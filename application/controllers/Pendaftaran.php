@@ -144,7 +144,8 @@ class Pendaftaran extends CI_Controller
 			$data = $this->pendaftaran_m->getByPhone($post['hp']);
 			if ($data->num_rows() != null) {
 				$kalimat = "Identitas Akun *Pustaka Guru Indonesia* \n\nEmail : ".$data->row("email")."\nPassword: ".$data->row("password")."\n\nSilahkan melanjutkan proses login di https://member.pustakaguru.id/";
-				$this->fungsi->sendWA($post['hp'],$kalimat);
+				$this->load->library("wa");				
+				$this->wa->waWhacenter($post['hp'],$kalimat);
 				$this->session->set_flashdata('success','Berhasil Di WA');
 				redirect("pendaftaran/forget");	        	
 			} else {
